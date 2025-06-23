@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Whitespace Hero</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <style>
+    .div1{
+    /* Custom CSS for navbar and hero */
+    .navbar-hero-bg {
+      background-color: #002c64;
+    }
+
+    .navbar-hero-logo {
+      height: 30px;
+    }
+
+    .navbar-hero-btn-login {
+      background-color: #fef08a;
+      color: #000;
+      border: none;
+      padding: 6px 16px;
+      font-weight: 600;
+    }
+
+    .navbar-hero-btn-cta {
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      padding: 6px 16px;
+      font-weight: 600;
+    }
+.hero-section {
+  background-color: #05376a; /* Deep blue */
+  background-image: url('./Element.png'); /* <-- Update this */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(5, 55, 106, 0.9); /* blue overlay to blend if needed */
+  z-index: -1;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.placeholder-box {
+  background-color: rgba(255, 255, 255, 0.6); /* Light transparent placeholder */
+}
+    
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .hero-image-placeholder {
+        height: 200px;
+      }
+
+      .user-tag {
+        font-size: 0.7rem;
+      }
+    }
+  }
+  .div2{
+      .highlighted-text {
+      position: relative;
+      display: inline-block;
+    }
+
+    .highlighted-text::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0.4em;
+      background-color: #ffe58f;
+      z-index: 0;
+    }
+
+    .highlighted-text span {
+      position: relative;
+      z-index: 1;
+    }
+
+    .image-placeholder {
+      background-color: #cce3ff;
+      width: 100%;
+      height: 300px;
+    }
+
+    .circle-diagram {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      margin: 0 auto;
+    }
+
+    .circle-diagram .center-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+
+    .circle-diagram .dot {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+
+    .dot1 { top: 0; left: 50%; transform: translateX(-50%); background: #fbbc05; }
+    .dot2 { top: 20%; left: 15%; background: #ff4d4f; }
+    .dot3 { top: 20%; right: 15%; background: #4285f4; }
+    .dot4 { bottom: 20%; left: 15%; background: #f4b400; }
+    .dot5 { bottom: 20%; right: 15%; background: #34a853; }
+    .dot6 { bottom: 0; left: 50%; transform: translateX(-50%); background: #4285f4; }
+    .dot7 { top: 50%; left: 0; transform: translateY(-50%); background: #4285f4; }
+    .dot8 { top: 50%; right: 0; transform: translateY(-50%); background: #34a853; }
+
+    .dashed-circle {
+      border: 2px dashed #cce3ff;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .outer-circle {
+      width: 100%;
+      height: 100%;
+    }
+
+    .inner-circle {
+      width: 60%;
+      height: 60%;
+      top: 20%;
+      left: 20%;
+    }
+
+    .custom-btn {
+      background-color: #3b82f6;
+      color: white;
+    }
+
+    .custom-btn:hover {
+      background-color: #2563eb;
+    }
+
+    @media (max-width: 768px) {
+      .circle-diagram {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+  .div3{
+  
+/* --- Extension Section --- */
+.ext-section {
+  background-color: #003366; /* Deep navy blue */
+}
+
+.ext-img-placeholder {
+  width: 100%;
+  height: 250px;
+  background-color: #cce2ff; /* Light blue placeholder */
+  border-radius: 6px;
+}
+
+/* --- Customize Section --- */
+.customize-img-placeholder {
+  width: 100%;
+  height: 250px;
+  background-color: #cce2ff; /* Light blue placeholder */
+  border-radius: 6px;
+}
+
+/* --- Shared Button Styles --- */
+.ext-btn,
+.customize-btn {
+  background-color: #4d94ff;
+  border: none;
+  transition: 0.3s ease;
+}
+
+.ext-btn:hover,
+.customize-btn:hover {
+  background-color: #397ddb;
+}
+
+/* --- Yellow underline for highlighted words --- */
+.underline-yellow {
+  position: relative;
+  display: inline-block;
+}
+
+.underline-yellow::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0.15em;
+  width: 100%;
+  height: 0.4em;
+  background-color: #ffe85f; /* Yellow highlight */
+  z-index: -1;
+  border-radius: 4px;
+}
+}
+@media (min-width: 768px) {
+  .col-lg-4 col-md-6 {
+    min-height: 500px;
+  }
+}
+
+.div4{
+.bg-dark-blue {
+  background-color: #003087 !important;
+}
+
+}
+.div5{
+
+  .bg-dark-blue {
+  background-color: #003366 !important;
+}
+
+
+
+/* Underline for "you are" */
+.underline-blue {
+  display: inline-block;
+  position: relative;
+}
+
+.underline-blue::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background-color: #3b82f6; /* Bootstrap primary blue */
+  border-radius: 2px;
+}
+
+/* Yellow highlight underline */
+.highlight-yellow {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+
+.highlight-yellow::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 10px;
+  width: 100%;
+  background-color: #ffe267;
+  z-index: -1;
+  border-radius: 3px;
+}
+}
+.div6{
+   .bg-deep-blue {
+    background-color: #003366;
+  }
+
+  .highlight-white {
+    position: relative;
+    display: inline-block;
+  }
+
+  .highlight-white::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background-color: #ffffff;
+    opacity: 0.3;
+    z-index: -1;
+    border-radius: 4px;
+  }
+
+  .custom-blue-btn {
+    background-color: #3b82f6 !important;
+    border: none;
+    color: white !important;
+    padding: 10px 24px;
+    font-weight: 500;
+    border-radius: 8px;
+  }
+
+  .custom-blue-btn:hover {
+    background-color: #2563eb !important;
+  }
+
+  .max-w-500 {
+    max-width: 500px;
+  }
+
+  @media (max-width: 767px) {
+    .display-5 {
+      font-size: 2rem;
+    }
+  }
+}
+
+
+  
+  .div7{
+      .highlight-word {
+    background: linear-gradient(transparent 60%, #fff3ac 60%);
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .card {
+    min-height: 100%;
+  }
+    
+  }
+  .div8{
+    
+  .highlight-word {
+    background: linear-gradient(transparent 60%, #fff3ac 60%);
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .card {
+    min-height: 100%;
+  }
+
+  .footer-cta {
+    background-color: #04345c;
+  }
+
+  .footer-cta a.btn {
+    background-color: #5caeff;
+    border: none;
+  }
+
+  .footer-cta a.btn:hover {
+    background-color: #478ddc;
+  }
+  }
+  </style>
+</head>
+<body>
+<div class="div1">
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-hero-bg py-3">
+    <div class="container">
+       <a class="navbar-brand" href="#">
+      <i class="fas fa-cube"></i>
+      <!-- <a class="navbar-brand d-flex align-items-center" href="#"> -->
+        <!-- <img src="https://via.placeholder.com/30x30" class="navbar-hero-logo me-2" alt="Logo"> -->
+        <strong>whitepace</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHero" aria-controls="navbarHero" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarHero">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Products
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Product 1</a></li>
+              <li><a class="dropdown-item" href="#">Product 2</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Solutions
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Solution 1</a></li>
+              <li><a class="dropdown-item" href="#">Solution 2</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="resourcesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Resources
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Resource 1</a></li>
+              <li><a class="dropdown-item" href="#">Resource 2</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+        </ul>
+        <div class="d-flex ms-3 gap-2">
+          <button class="navbar-hero-btn-login">Login</button>
+          <button class="navbar-hero-btn-cta">Try Whitepace free <i class="fas fa-arrow-right ms-1"></i></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+<!-- Hero Section -->
+<section class="hero-section d-flex align-items-center text-white py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Text Side -->
+      <div class="col-md-6">
+        <h1 class="display-5 fw-bold">Get More Done with <br> whitepace</h1>
+        <p class="my-4">
+          Project management software that enables your teams to collaborate, plan,<br>
+          analyze and manage everyday tasks
+        </p>
+        <a href="#" class="btn btn-primary btn-lg">Try Whitepace free →</a>
+      </div>
+
+      <!-- Right Side Box Placeholder -->
+      <div class="col-md-6 mt-4 mt-md-0">
+        <!-- <div class="placeholder-box bg-light rounded-2 w-100" style="height: 300px;"></div> -->
+        <img src="./OIP.jpeg" alt="oip">
+      </div>
+    </div>
+  </div>
+</section>
+
+ <div class="div2">
+  <!-- Section 1 -->
+  <div class="container py-5">
+    <div class="row align-items-center">
+      <div class="col-md-6 mb-4 mb-md-0">
+        <h2 class="fw-bold">Project <span class="highlighted-text"><span>Management</span></span></h2>
+        <p class="text-muted">
+          Images, videos, PDFs and audio files are supported. Create math expressions and diagrams directly from the app. Take photos with the mobile app and save them to a note.
+        </p>
+        <a href="#" class="btn custom-btn">
+          Get Started <i class="fas fa-arrow-right ms-2"></i>
+        </a>
+      </div>
+      <div class="col-md-6">
+        <!-- <div class="image-placeholder"></div> -->
+        <img src="./ai.jpg" alt="AI" height="350px" >
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 2 -->
+  <div class="container py-5">
+    <div class="row align-items-center">
+      <div class="col-md-6 mb-4 mb-md-0">
+        <div class="circle-diagram">
+          <div class="dashed-circle outer-circle"></div>
+          <div class="dashed-circle inner-circle"></div>
+          <div class="center-icon">
+            <i class="fas fa-layer-group fa-2x text-primary"></i>
+          </div>
+          <div class="dot dot1"></div>
+          <div class="dot dot2"></div>
+          <div class="dot dot3"></div>
+          <div class="dot dot4"></div>
+          <div class="dot dot5"></div>
+          <div class="dot dot6"></div>
+          <div class="dot dot7"></div>
+          <div class="dot dot8"></div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h2 class="fw-bold">Work <span class="highlighted-text"><span>together</span></span></h2>
+        <p class="text-muted">
+          With whitepace, share your notes with your colleagues and collaborate on them.
+          You can also publish a note to the internet and share the URL with others.
+        </p>
+        <a href= "#" class="btn custom-btn">
+          Try it now <i class="fas fa-arrow-right ms-2"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+ </div>
+ <div class="div3">
+ 
+<!-- Section: Use as Extension -->
+<section class="ext-section text-white py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Left Text -->
+      <div class="col-md-6 mb-4 mb-md-0">
+        <h2 class="fw-bold">
+          Use as <span class="underline-yellow">Extension</span>
+        </h2>
+        <p class="ext-desc">
+          Use the web clipper extension, available on Chrome and Firefox, to save web pages or take screenshots as notes.
+        </p>
+        <a href="#" class="btn btn-primary ext-btn">
+          Let's Go <i class="fas fa-arrow-right ms-2"></i>
+        </a>
+      </div>
+
+      <!-- Right Image Placeholder -->
+      <div class="col-md-6">
+        <!-- <div class="ext-img-placeholder"></div> -->
+         <img src="./OIP (1).jpeg" alt="OIP1">
+      </div>
+    </div>
+  </div>
+</section>
+<div class="div4">
+<!-- Pricing Section Start -->
+<section id="pricing-section" class="container my-5">
+  <div class="text-center mb-5">
+    <h2 class="fw-bold">Choose <span class="px-2 py-1 rounded bg-warning-subtle">Your Plan</span></h2>
+    <p class="text-muted">
+      Whether you want to get organized, keep your personal life on track, or boost workplace productivity, Evernote has the right plan for you.
+    </p>
+  </div>
+
+  <div class="row g-4 justify-content-center">
+    <!-- Free Plan -->
+    <div class="col-lg-4 col-md-6">
+      <div class="pricing-box border rounded-3 p-4 bg-white text-center shadow-sm h-100">
+        <h5 class="fw-bold">Free</h5>
+        <h3 class="fw-bold">$0</h3>
+        <p class="text-muted mt-2">Capture ideas and find them quickly</p>
+        <ul class="list-unstyled text-start mt-3">
+          <li><i class="fas fa-check-circle text-black me-2"></i> Sync unlimited devices</li>
+          <li><i class="fas fa-check-circle text-black me-2"></i> 10 GB monthly uploads</li>
+          <li><i class="fas fa-check-circle text-black me-2"></i> 200 MB max. note size</li>
+          <li><i class="fas fa-check-circle text-black me-2"></i> Customize Home dashboard and access extra widgets</li>
+          <li><i class="fas fa-check-circle text-black me-2"></i> Connect primary Google Calendar account</li>
+          <li><i class="fas fa-check-circle text-black me-2"></i> Add due dates, reminders, and notifications to your tasks</li>
+        </ul>
+        <a href="#" class="btn btn-outline-warning w-100 mt-3">Get Started</a>
+      </div>
+    </div>
+
+    <!-- Personal Plan -->
+    <div class="col-lg-4 col-md-6">
+      <div class="pricing-box bg-dark-blue text-white border-0 rounded-3 p-4 text-center shadow h-100"><br><br>
+        <h5 class="fw-bold">Personal</h5>
+        <h3 class="fw-bold">$11.99</h3>
+        <p class="mt-2">Keep home and family on track</p>
+        <ul class="list-unstyled text-start mt-3">
+          <li><i class="fas fa-check-circle text-white me-2"></i> Sync unlimited devices</li>
+          <li><i class="fas fa-check-circle text-white me-2"></i> 10 GB monthly uploads</li>
+          <li><i class="fas fa-check-circle text-white me-2"></i> 200 MB max. note size</li>
+          <li><i class="fas fa-check-circle text-white me-2"></i> Customize Home dashboard and access extra widgets</li>
+          <li><i class="fas fa-check-circle text-white me-2"></i> Connect primary Google Calendar account</li>
+          <li><i class="fas fa-check-circle text-white me-2"></i> Add due dates, reminders, and notifications to your tasks</li>
+        </ul>
+        <a href="#" class="btn btn-info w-100 mt-3 text-white">Get Started</a>
+      </div>
+    </div>
+
+    <!-- Organization Plan -->
+    <div class="col-lg-4 col-md-6">
+      <div class="pricing-box border rounded-3 p-4 bg-white text-center shadow-sm h-100">
+        <h5 class="fw-bold">Organization</h5>
+        <h3 class="fw-bold">$49.99</h3>
+        <p class="text-muted mt-2">Capture ideas and find them quickly</p>
+        <ul class="list-unstyled text-start mt-3">
+          <li><i class="fas fa-check-circle text-black me-2"></i> Sync unlimited devices</li>
+          <li><i class="fas fa-check-circle text-black me-2"></i> 10 GB monthly uploads</li>
+          <li><i class="fas fa-check-circle text-black me-2"></i> 200 MB max. note size</li>
+          <li><i class="fas fa-check-circle text-black me-2"></i> Customize Home dashboard and access extra widgets</li>
+          <li><i class="fas fa-check-circle text-black me-2"></i> Connect primary Google Calendar account</li>
+          <li><i class="fas fa-check-circle text-black me-2"></i> Add due dates, reminders, and notifications to your tasks</li>
+        </ul>
+        <a href="#" class="btn btn-outline-warning w-100 mt-3">Get Started</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Pricing Section End --> 
+ </div>
+ <div class="div5">
+ <!-- START: Custom Section (Paste below your existing code) -->
+<section id="custom-section" class="pt-5">
+
+  <!-- Hero Section (Dark Blue) -->
+  <div class="bg-dark-blue text-white text-center py-5 px-3">
+    <div class="container">
+      <h1 class="fw-bold display-5">
+        Your work, everywhere <span class="underline-blue">you are</span>
+      </h1>
+      <p class="mt-3 mb-4">
+        Access your notes from your computer, phone or tablet by synchronising with various services,
+        including whitespace, Dropbox and OneDrive. The app is available on Windows, macOS, Linux,
+        Android and iOS. A terminal app is also available!
+      </p>
+      <a href="#" class="btn btn-primary">Try Taskey <i class="fas fa-arrow-right ms-2"></i></a>
+    </div>
+  </div>
+
+  <!-- Middle Section (White Background) -->
+  <div class="bg-white py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Left Column -->
+        <div class="col-md-6">
+          <h1 class="fw-bold">
+            100% <span class="highlight-yellow">your data</span>
+          </h1>
+          <p class="text-muted mt-3 mb-4">
+            The app is open source and your notes are saved to an open format, so you'll always
+            have access to them. Uses End-To-End Encryption (E2EE) to secure your notes and
+            ensure no-one but yourself can access them.
+          </p>
+          <a href="#" class="btn btn-primary">Read more <i class="fas fa-arrow-right ms-2"></i></a>
+        </div>
+
+        <!-- Right Column (Image) -->
+        <div class="col-md-6 text-center mt-4 mt-md-0">
+          <img src="./encryption.png" alt="Encryption" class="img-fluid" style="max-width: 80%;">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sponsors Section -->
+  <div class="bg-white py-5 text-center">
+    <h1 class="fw-bold mb-4">
+      Our <span class="highlight-yellow">Sponsors</span>
+    </h3>
+    <div class="d-flex justify-content-center flex-wrap gap-4 align-items-center">
+      <!-- <i class="fab fa-apple fa-3x"></i> -->
+      <img src="./IMG-20250623-WA0110.jpg" alt="apple" height="40" class="me-3" ><br>
+      <img src="./microsoft.jpg" alt="Microsoft" height="40"><br>
+      <img src="./slack.jpg" alt="Slack" height="40"><br>
+      <img src="./IMG-20250623-WA0114.jpg" alt="Google" height="36">
+    </div>
+  </div>
+
+</section>
+<!-- END: Custom Section -->
+ </div>
+ <div class="div6">
+<!-- START: Integration Section (Paste this below your previous section) -->
+<section class="integration-section bg-deep-blue text-white py-5 px-3">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Left Image Side -->
+      <div class="col-md-6 text-center mb-4 mb-md-0">
+        <img src="./work.png" class="img-fluid w-100 max-w-500" alt="Integration Diagram">
+      </div>
+
+      <!-- Right Text Side -->
+      <div class="col-md-6">
+        <h2 class="fw-bold display-5">Work with Your <br> Favorite Apps Using <br><span class="highlight-white">whitepace</span></h2>
+        <p class="mt-3 mb-4">
+          Whitepace teams up with your favorite software. Integrate with over 1000+ apps with Zapier to have all the tools you need for your project success.
+        </p>
+        <a href="#" class="btn btn-primary custom-blue-btn">Read more <i class="fas fa-arrow-right ms-2"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END: Integration Section -->
+</div>
+
+<div class="div7">
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-5">
+      What Our Clients <span class="highlight-word">Says</span>
+    </h2>
+    <div class="row g-4 justify-content-center">
+      <!-- Testimonial Card 1 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm p-4 rounded-4">
+          <div class="mb-3 fs-1 text-primary">“</div>
+          <p>Whitepate is designed as a collaboration tool for businesses that is a full project management solution.</p>
+          <hr>
+          <div class="d-flex align-items-center pt-3">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle me-3" width="50" height="50" alt="Client 1">
+            <div>
+              <h6 class="mb-0 fw-bold">Oberon Shaw, MCH</h6>
+              <small class="text-muted">Head of Talent Acquisition, North America</small>
+            </div>
+          </div>
+        </div><br><br>
+      </div>
+
+      <!-- Testimonial Card 2 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 text-white bg-primary shadow-sm p-4 rounded-4">
+          <div class="mb-3 fs-1">“</div>
+          <p>Whitepate is designed as a collaboration tool for businesses that is a full project management solution.</p>
+          <hr class="border-light">
+          <div class="d-flex align-items-center pt-3">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle me-3" width="50" height="50" alt="Client 2">
+            <div>
+              <h6 class="mb-0 fw-bold text-white">Oberon Shaw, MCH</h6>
+              <small>Head of Talent Acquisition, North America</small>
+            </div>
+          </div>
+        </div><br><br>
+      </div>
+
+      <!-- Testimonial Card 3 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 text-white bg-primary shadow-sm p-4 rounded-4">
+          <div class="mb-3 fs-1">“</div>
+          <p>Whitepate is designed as a collaboration tool for businesses that is a full project management solution.</p>
+          <hr class="border-light">
+          <div class="d-flex align-items-center pt-3">
+            <img src="https://randomuser.me/api/portraits/men/45.jpg" class="rounded-circle me-3" width="50" height="50" alt="Client 3">
+            <div>
+              <h6 class="mb-0 fw-bold text-white">Oberon Shaw, MCH</h6>
+              <small>Head of Talent Acquisition, North America</small>
+              
+            </div>
+          </div>
+        </div>
+      </div><br><br>
+    </div>
+
+    <!-- Pagination dots -->
+    <div class="d-flex justify-content-center mt-4">
+      <span class="dot mx-1 bg-primary"></span>
+      <span class="dot mx-1 bg-primary opacity-50"></span>
+      <span class="dot mx-1 bg-primary opacity-50"></span>
+    </div>
+  </div>
+</section>
+</div>
+<div class="div8">
+<!-- Footer CTA Section -->
+<section class="footer-cta text-white text-center py-5">
+  <div class="container">
+    <h1 class="fw-bold display-5">Try Whitepace today</h1>
+    <p class="mb-4">Get started for free. <br>Add your whole team as your needs grow.</p>
+    <a href="#" class="btn btn-lg btn-primary mb-4">Try Taskey free →</a>
+    <p class="mb-3">On a big team? Contact sales</p>
+    <div class="d-flex justify-content-center gap-4 mb-5">
+      <i class="bi bi-apple fs-1"></i>
+      <i class="bi bi-windows fs-1"></i>
+      <i class="bi bi-android fs-1"></i>
+    </div>
+
+    <div class="row text-start text-md-left">
+      <div class="col-md-3 mb-4">
+        <h5 class="fw-bold">whitepace</h5>
+        <p>whitepace was created for the new ways we live and work. We make a better workspace around the world</p>
+      </div>
+      <div class="col-md-2 mb-4">
+        <h6 class="fw-bold">Product</h6>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white-50 text-decoration-none">Overview</a></li>
+          <li><a href="#" class="text-white-50 text-decoration-none">Pricing</a></li>
+          <li><a href="#" class="text-white-50 text-decoration-none">Customer stories</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2 mb-4">
+        <h6 class="fw-bold">Resources</h6>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white-50 text-decoration-none">Blog</a></li>
+          <li><a href="#" class="text-white-50 text-decoration-none">Guides & tutorials</a></li>
+          <li><a href="#" class="text-white-50 text-decoration-none">Help center</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2 mb-4">
+        <h6 class="fw-bold">Company</h6>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white-50 text-decoration-none">About us</a></li>
+          <li><a href="#" class="text-white-50 text-decoration-none">Careers</a></li>
+          <li><a href="#" class="text-white-50 text-decoration-none">Media kit</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 mb-4">
+        <h6 class="fw-bold">Try It Today</h6>
+        <p>Get started for free. Add your whole team as your needs grow.</p>
+        <a href="#" class="btn btn-primary">Start today →</a>
+      </div>
+    </div>
+
+    <hr class="border-secondary">
+
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <div class="mb-2 mb-md-0">
+        <small class="text-white-50">🌐 English</small>
+        <small class="text-white-50 ms-3">Terms & privacy</small>
+        <small class="text-white-50 ms-3">Security</small>
+        <small class="text-white-50 ms-3">Status</small>
+        <small class="text-white-50 ms-3">©2021 Whitepace LLC.</small>
+      </div>
+      <div>
+        <a href="#" class="text-white-50 text-decoration-none me-3"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="text-white-50 text-decoration-none me-3"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="text-white-50 text-decoration-none"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
